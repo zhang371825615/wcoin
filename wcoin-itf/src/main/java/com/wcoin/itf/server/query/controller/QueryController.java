@@ -1,6 +1,10 @@
 package com.wcoin.itf.server.query.controller;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import org.bitcoin.market.AbstractMarketApi;
 import org.bitcoin.market.MarketApiFactory;
@@ -32,7 +36,15 @@ public class QueryController {
 			 AbstractMarketApi market = MarketApiFactory.getInstance().getMarket(Market.PeatioCNY);
 			 JSONObject jsonObj = market.ticker2(new SymbolPair(f, s));
 			 rm.setData(jsonObj);
-			
+			 ThreadPoolExecutor EXECUTOR = new ThreadPoolExecutor(5, 10, 3000L, TimeUnit.MILLISECONDS,  new LinkedBlockingQueue<Runnable>(4)); 
+		      for (int i = 0; i < 2; i++) { 
+		          EXECUTOR.execute(new Runnable() { 
+		              public void run() { 
+		                  System.out.println("Hello World"); 
+		              } 
+		          }); 
+		          EXECUTOR.shutdown(); 
+		      }
 		}
 		return rm;
 		

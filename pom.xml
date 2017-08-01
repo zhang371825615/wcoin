@@ -48,5 +48,6 @@
 		<module>wcoin-static</module>
 		<module>peatio-client</module>
 		<module>common</module>
+		<module>wcoin-asyz</module>
 	</modules>
 </project>

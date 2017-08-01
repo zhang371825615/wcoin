@@ -1,0 +1,59 @@
+
+  <ion-view title="抢猪计划" ng-controller="asyzRobController">
+        <ion-nav-buttons side="right">
+        <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+      </ion-nav-buttons> 
+    <style>
+    .margin_class{
+    margin-left: 13%
+    }
+    </style>  
+   
+    <ion-content>
+
+        <div class="list">
+
+          <div class="item item-input item-select">
+            <div class="input-label">选猪</div>
+            <select>
+              <option value="4500">母猪</option>
+              <option selected="" value="1500">肉猪</option>
+              <option value="500">猪仔</option>
+            </select>
+          </div>
+          
+           <div class="item item-divider"> 
+                                              账号列表
+          </div>
+          
+            <div class="item item-text-wrap " ng-repeat="item in devList">
+               <ion-checkbox 
+                        ng-model="item.checked" 
+                        ng-checked="item.checked">
+             <i class=""> {{item.name}}</i>
+             <i class="margin_class">{{item.owner}} </i>
+    
+            <i class="margin_class">{{item.balance}}元</i>  
+             <i class="margin_class" > {{item.value}}只</i>
+          </ion-checkbox>
+             <div class="item range range-dark">
+     <i class="icon ion-ios-lightbulb-outline"></i>
+     <input type="range" name="volume" ng-model="item.value" min="1" max="8" value="{{item.value}}">
+     <i class="icon ion-ios-lightbulb"></i>
+       </div>
+           </div>
+            
+            <div class="row">
+            <div class="col">
+            <button class="button icon-center button-calm" style="width:100%">提交</button>
+            
+            </div>
+            </div>
+          
+        </div>
+
+    </ion-content>
+      
+      
+   
+ </ion-view>

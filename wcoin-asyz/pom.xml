@@ -5,13 +5,13 @@
     <artifactId>wcoin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>common</artifactId>
+  <artifactId>wcoin-asyz</artifactId>
   
   <dependencies>
-  	<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-		</dependency>
-  
+    	<dependency>
+		<groupId>com.zhang.wcoin</groupId>
+	    <artifactId>common</artifactId>
+	  	<version>0.0.1-SNAPSHOT</version>
+	  	</dependency>
   </dependencies>
 </project>

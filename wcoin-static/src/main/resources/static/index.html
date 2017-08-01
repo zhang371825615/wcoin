@@ -2,13 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
+   <meta name="viewport"content="width=device-width,user-scalable=no" />
   <title>币控</title>
   <base href="/">
 </head>
-<body>
- <div ng-view></div>
+<body ng-app>
+  <ion-nav-view>
+<!--       <div  style="display:none" ng-include="'app/views/dashboard.html'"></div> -->
+<!--   <div style="display:none" ng-include="'app/views/asyz.html'"></div> -->
+  </ion-nav-view>
+
 </body>
 <!-- <script src="app/libs/jquery-2.2.3.min.js"></script> -->
+ <link href="https://cdn.bootcss.com/ionic/1.3.2/css/ionic.css" rel="stylesheet">
 <script data-main="app/main" src="app/libs/require.js"></script>
 </body>
 </html>

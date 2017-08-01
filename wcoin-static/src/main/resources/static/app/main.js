@@ -6,18 +6,18 @@ require.config({
     baseUrl: "app/",
     paths: {
       "jquery": "libs/jquery-2.2.3.min",
-      "fastclick" : "libs/fastclick",
-      "blocksit" : "libs/blocksit",
-      "idTabs" : "libs/idTabs",
-      "stickUp" : "libs/stickUp",
+      "ionic" : "libs/ionic.bundle",
       "app" : "controllers/app",
-      "angular" : "libs/angular.min",
+      "indexController" : "controllers/indexController",
+      "dashboardController" : "controllers/dashboardController",
+      "menuController" : "controllers/menuController",
+      "asyzRobController" : "controllers/asyzRobController",
+      "asyzController" : "controllers/asyzController",
+      "angular" : "libs/angular/angular",
       "angular-route" : "libs/angular-route.min",
-      "angular-sanitize" : "libs/angular-sanitize.min",
-      "bootstrap":"libs/bootstrap.min",
-      "adminApp":"libs/adminApp.min",
-      "route" : "routes/appRoute",
-     
+      "angular-sanitize" : "libs/angular/angular-sanitize.min",
+      "route" : "routes/appRoute"
+
     },
     shim: {
        'angular': {
@@ -31,18 +31,16 @@ require.config({
           deps: ["angular"],
           exports: 'angular-sanitize'
        },
-       'bootstrap':['jquery'],
-       'adminApp':['bootstrap']
+       'ionic':['angular'],
+       deps:['bootstrap']
+    
     }
 });
 
 
-require(['jquery','angular','angular-route','angular-sanitize','route','app','bootstrap','adminApp'],function ($,angular){
-
-      $(function () {
+require(['angular','angular-route','angular-sanitize','route','app','ionic','menuController','indexController','dashboardController','asyzController','asyzRobController'],function (angular){
 
             angular.bootstrap(document,["wcoinApp"]);
-
-      })
+      
 
 });
